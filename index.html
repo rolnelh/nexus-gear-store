@@ -82,44 +82,63 @@
 <body class="bg-gray-50 text-slate-900">
 
     <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+        <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
 
-            <h1 class="text-xl font-bold tracking-tighter shrink-0">
-                <a href="index.html">GADGETS<span class="text-blue-600">&</span>ACC</a>
-            </h1>
+            <div class="flex lg:flex-1">
+                <a href="index.html" class="-m-1.5 p-1.5">
+                    <h1 class="text-xl font-bold tracking-tighter shrink-0">
+                        GADGETS<span class="text-blue-600">&</span>ACC
+                    </h1>
+                </a>
+            </div>
 
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#hero" class="text-sm font-semibold hover:text-blue-600 transition-colors">Home</a>
+            <div class="flex lg:hidden items-center gap-4">
+                <a href="index.html" class="relative text-lg hover:text-blue-600 transition">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+                </a>
+                <button type="button" command="show-modal" commandfor="mobile-menu"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <i class="fa-solid fa-bars-staggered text-xl"></i>
+                </button>
+            </div>
 
-                <div class="group h-20 flex items-center">
-                    <button
-                        class="flex items-center gap-1 text-sm font-semibold group-hover:text-blue-600 transition-colors">
-                        Shop <i
-                            class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition-transform"></i>
+            <el-popover-group class="hidden lg:flex lg:gap-x-12">
+                <a href="#hero"
+                    class="text-sm/6 font-semibold text-gray-900 hover:text-blue-600 transition-colors">Home</a>
+
+                <div class="relative">
+                    <button popovertarget="desktop-menu-shop"
+                        class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 hover:text-blue-600 transition-colors">
+                        Shop
+                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 flex-none text-gray-400">
+                            <path
+                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                        </svg>
                     </button>
 
-                    <div
-                        class="absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                        <div class="max-w-7xl mx-auto px-8 py-10 grid grid-cols-4 gap-8">
+                    <el-popover id="desktop-menu-shop" anchor="bottom" popover
+                        class="w-screen max-w-4xl overflow-hidden rounded-3xl bg-white shadow-lg outline-1 outline-gray-900/5 transition transition-discrete [--anchor-gap:--spacing(5)] backdrop:bg-transparent open:block data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                        <div class="px-8 py-10 grid grid-cols-4 gap-8">
                             <div class="space-y-4">
                                 <h4 class="font-bold text-blue-600 uppercase text-xs tracking-widest">Categories</h4>
-                                <ul class="space-y-2 text-sm">
-                                    <li><a href="#bestsellers" class="text-slate-500 hover:text-slate-900">Audio &
+                                <ul class="space-y-3 text-sm">
+                                    <li><a href="#bestsellers" class="text-slate-500 hover:text-blue-600">Audio &
                                             Sound</a></li>
-                                    <li><a href="#featured" class="text-slate-500 hover:text-slate-900">Computing
+                                    <li><a href="#featured" class="text-slate-500 hover:text-blue-600">Computing
                                             Gear</a></li>
-                                    <li><a href="#featured" class="text-slate-500 hover:text-slate-900">Wearables</a>
+                                    <li><a href="#featured" class="text-slate-500 hover:text-blue-600">Wearables</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="space-y-4">
                                 <h4 class="font-bold text-blue-600 uppercase text-xs tracking-widest">Help & Support
                                 </h4>
-                                <ul class="space-y-2 text-sm">
-                                    <li><a href="#" class="text-slate-500 hover:text-slate-900">Shipping
-                                            Policy</a></li>
-                                    <li><a href="#" class="text-slate-500 hover:text-slate-900">Warranty</a>
-                                    </li>
+                                <ul class="space-y-3 text-sm">
+                                    <li><a href="#" class="text-slate-500 hover:text-blue-600">Shipping Policy</a></li>
+                                    <li><a href="#" class="text-slate-500 hover:text-blue-600">Warranty</a></li>
                                 </ul>
                             </div>
                             <div class="col-span-2 relative rounded-2xl overflow-hidden h-40 group/promo">
@@ -132,17 +151,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </el-popover>
                 </div>
 
                 <a href="#bestsellers"
-                    class="text-sm font-semibold hover:text-blue-600 transition-colors">Bestsellers</a>
-                <a href="#" class="text-sm font-semibold hover:text-blue-600 transition-colors">Our Story</a>
-                <a href="#" class="text-sm font-semibold hover:text-blue-600 transition-colors text-slate-400">|</a>
-                <a href="#" class="text-sm font-semibold hover:text-blue-600 transition-colors">Contact</a>
-            </nav>
+                    class="text-sm/6 font-semibold text-gray-900 hover:text-blue-600 transition-colors">Bestsellers</a>
+                <a href="#" class="text-sm/6 font-semibold text-gray-900 hover:text-blue-600 transition-colors">Our
+                    Story</a>
+                <a href="#"
+                    class="text-sm/6 font-semibold text-gray-900 hover:text-blue-600 transition-colors">Contact</a>
+            </el-popover-group>
 
-            <div class="flex items-center gap-5">
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6 items-center">
                 <button class="text-slate-600 hover:text-blue-600 transition"><i
                         class="fa-solid fa-magnifying-glass"></i></button>
                 <a href="index.html" class="relative text-lg hover:text-blue-600 transition">
@@ -150,28 +170,68 @@
                     <span
                         class="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
                 </a>
-                <button id="mobile-menu-btn" class="md:hidden text-2xl text-slate-900">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                </button>
             </div>
-        </div>
+        </nav>
 
-        <div id="mobile-menu"
-            class="fixed inset-0 bg-white z-[60] flex flex-col p-8 translate-x-full transition-transform duration-300 md:hidden">
-            <div class="flex justify-between items-center mb-12">
-                <h1 class="text-xl font-bold italic">GADGETS<span class="text-blue-600">&</span>ACC</h1>
-                <button id="close-menu" class="text-3xl text-slate-900">&times;</button>
-            </div>
-            <nav class="flex flex-col space-y-6 text-2xl font-bold tracking-tight">
-                <a href="index.html" class="hover:text-blue-600 transition">Shop</a>
-                <a href="#bestsellers" class="hover:text-blue-600 transition">Bestsellers</a>
-                <a href="#" class="hover:text-blue-600 transition">About</a>
-                <a href="#" class="hover:text-blue-600 transition">Contact</a>
-            </nav>
-            <div class="mt-auto border-t pt-8 space-y-4">
-                <p class="text-slate-400 text-sm italic">Need help? support@gadgets.com</p>
-            </div>
-        </div>
+        <el-dialog>
+            <dialog id="mobile-menu" class="backdrop:bg-black/20 lg:hidden">
+                <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                    <el-dialog-panel
+                        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div class="flex items-center justify-between">
+                            <h1 class="text-xl font-bold tracking-tighter">
+                                GADGETS<span class="text-blue-600">&</span>ACC
+                            </h1>
+                            <button type="button" command="close" commandfor="mobile-menu"
+                                class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                <span class="sr-only">Close menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    class="size-6">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-gray-500/10">
+                                <div class="space-y-2 py-6">
+                                    <div class="-mx-3">
+                                        <button type="button" command="--toggle" commandfor="products"
+                                            class="flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                                            Shop
+                                            <svg viewBox="0 0 20 20" fill="currentColor"
+                                                class="size-5 flex-none in-aria-expanded:rotate-180 transition-transform">
+                                                <path
+                                                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                            </svg>
+                                        </button>
+                                        <el-disclosure id="products" hidden class="mt-2 block space-y-2">
+                                            <a href="#bestsellers"
+                                                class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-600 hover:bg-gray-50">Audio
+                                                & Sound</a>
+                                            <a href="#featured"
+                                                class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-600 hover:bg-gray-50">Computing
+                                                Gear</a>
+                                            <a href="#featured"
+                                                class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-600 hover:bg-gray-50">Wearables</a>
+                                        </el-disclosure>
+                                    </div>
+                                    <a href="#bestsellers"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Bestsellers</a>
+                                    <a href="#"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Our
+                                        Story</a>
+                                    <a href="#"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+                                </div>
+                                <div class="py-6">
+                                    <p class="text-slate-400 text-sm">support@gadgets.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </el-dialog-panel>
+                </div>
+            </dialog>
+        </el-dialog>
     </header>
 
     <section id="hero" class="relative h-[90vh] flex items-center overflow-hidden bg-slate-900">
@@ -945,7 +1005,7 @@
     </footer>
 
 
-    <script>
+    <!-- <script>
         // Script simple pour le menu mobile
         const btnOpen = document.getElementById('mobile-menu-btn');
         const btnClose = document.getElementById('close-menu');
@@ -953,7 +1013,7 @@
 
         btnOpen.onclick = () => menu.classList.remove('translate-x-full');
         btnClose.onclick = () => menu.classList.add('translate-x-full');
-    </script>
+    </script> -->
 
 </body>
 
