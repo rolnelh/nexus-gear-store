@@ -234,27 +234,53 @@
         </el-dialog>
     </header>
 
-    <section id="hero" class="relative h-[90vh] flex items-center overflow-hidden bg-slate-900">
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://i.pinimg.com/1200x/ee/e1/a8/eee1a87fbe7955f8a1812359542302c5.jpg"
-                class="w-full h-full object-cover opacity-40 scale-110" alt="Banner">
+            <img src="https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="w-full h-full object-cover scale-105 animate-subtle-zoom" alt="Background Tech">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-slate-900/40"></div>
         </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 w-full">
-            <div class="max-w-2xl space-y-6">
-                <span class="text-blue-400 font-bold tracking-[0.3em] uppercase text-sm block">Premium Gear
-                    2026</span>
-                <h2 class="text-5xl md:text-7xl font-black text-white leading-tight uppercase">Elevate Your
-                    <br><span class="text-blue-500">Digital Life.</span>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-20">
+            <div class="max-w-3xl space-y-8">
+
+                <h2 class="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase">
+                    Elevate Your <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+                        Digital Life.
+                    </span>
                 </h2>
-                <p class="text-slate-300 text-lg md:text-xl max-w-lg">Handpicked technology designed for creators,
-                    gamers, and tech enthusiasts.</p>
-                <div class="flex gap-4 pt-4">
+
+                <p class="text-slate-300 text-lg md:text-xl max-w-lg leading-relaxed font-medium">
+                    Découvrez une collection exclusive de gadgets haute performance conçus pour repousser vos limites
+                    créatives.
+                </p>
+
+                <div class="flex flex-wrap gap-5 pt-6">
                     <a href="#bestsellers"
-                        class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-all transform hover:scale-105">Shop
-                        Now</a>
+                        class="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-lg shadow-blue-600/30">
+                        Acheter Maintenant
+                    </a>
+
                     <a href="#about"
-                        class="bg-white/10 backdrop-blur text-white border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">Explore
-                        Story</a>
+                        class="px-10 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full border border-white/20 backdrop-blur-md transition-all">
+                        Explorer la Collection
+                    </a>
+                </div>
+
+                <div class="pt-12 flex items-center gap-8 border-t border-white/10">
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-white">24h</span>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-widest">Livraison</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-white">4.9/5</span>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-widest">Avis Clients</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-white">2 Ans</span>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-widest">Garantie</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1018,3 +1044,4 @@
 </body>
 
 </html>
+
